@@ -1,0 +1,62 @@
+---
+import '../styles/style.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Notes on software, systems, and whatever else is holding my attention." } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const path = Astro.url.pathname;
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonical} />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonical} />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="sitemap" href="/sitemap-index.xml" />
+  <link rel="alternate" type="application/rss+xml" title="Lawson — Writing" href={new URL('rss.xml', Astro.site)} />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+<div class="wrap">
+
+  <nav class="nav">
+    <a class="nav-brand" href="/">Lawson</a>
+    <div class="nav-links">
+      <a class="wing-link allcaps" href="/" aria-current={path === '/' ? 'page' : undefined}>Writing</a>
+      <a class="wing-link allcaps" href="/about/" aria-current={path.startsWith('/about') ? 'page' : undefined}>About</a>
+    </div>
+  </nav>
+
+  <slot />
+
+  <footer class="footer">
+    <div class="footer-grad"></div>
+    <div class="footer-inner">
+      <div class="allcaps">&copy; {new Date().getFullYear()} Lawson</div>
+      <div class="footer-links allcaps">
+        <a href="https://github.com/">GitHub</a>
+        <a href="mailto:lawsonbh@gmail.com">Email</a>
+        <a href="/rss.xml">RSS</a>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>

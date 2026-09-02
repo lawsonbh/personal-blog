@@ -1,0 +1,13 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "personal-blog",
+  "compatibility_date": "2026-09-02",
+
+  // Static-assets-only Worker: no "main" entry script, so requests are served
+  // directly from the uploaded files with no Worker invocation.
+  "assets": {
+    "directory": "./dist",
+    // Astro emits 404.html; serve it for unmatched paths.
+    "not_found_handling": "404-page"
+  }
+}

@@ -1,0 +1,14 @@
+# Cloudflare applies the most specific matching rule.
+
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: DENY
+  Permissions-Policy: geolocation=(), microphone=(), camera=()
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+  # HTML revalidates so a new deploy is visible immediately.
+  Cache-Control: public, max-age=0, must-revalidate
+
+# Astro fingerprints every filename under /_astro/, so cache it forever.
+/_astro/*
+  Cache-Control: public, max-age=31536000, immutable

@@ -1,0 +1,3 @@
+# Old flat URLs from the hand-written version.
+/posts/:slug.html  /posts/:slug/  301
+/feed.xml          /rss.xml       301
