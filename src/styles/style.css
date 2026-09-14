@@ -72,7 +72,7 @@ h3 { font-size: 1.25rem; }
    Article
    ============================================================ */
 .article-head { padding: 3rem 1.5rem 2rem; }
-.article-head h1 { font-size: clamp(2rem, 5.5vw, 3.4rem); max-width: 20ch; }
+.article-head h1 { font-size: clamp(1.6rem, 4vw, 2.4rem); max-width: 20ch; }
 .article-head .post-meta { margin-bottom: 1.2rem; }
 .prose { padding: 3rem 1.5rem; max-width: 68ch; }
 .prose > :first-child { margin-top: 0; }
