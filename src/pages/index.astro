@@ -9,15 +9,7 @@ const fmt = (d: Date) =>
   d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: '2-digit', timeZone: 'UTC' });
 ---
 <Base title="Lawson — Writing">
-  <header class="hero">
-    <div class="hero-inner">
-      <div class="caption">Personal Blog — Est. 2026</div>
-      <h1>Notes from the build.</h1>
-      <p>Short thoughts on life and software.</p>
-    </div>
-  </header>
-
-  <div class="section-head">
+  <div class="section-head top">
     <div class="caption">All Posts</div>
     <div class="caption">{String(posts.length).padStart(2, '0')}</div>
   </div>
