@@ -10,6 +10,6 @@ export default defineConfig({
   integrations: [sitemap()],
   build: { format: 'directory' },
   markdown: {
-    shikiConfig: { theme: 'github-dark', wrap: true },
+    shikiConfig: { theme: 'github-light', wrap: true },
   },
 });

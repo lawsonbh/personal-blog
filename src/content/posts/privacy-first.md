@@ -1,6 +1,6 @@
 ---
-title: "Keeping Privacy"
-description: "Privacy in a multi-agent AI platform"
+title: "Keeping Privacy Centered"
+description: "Privacy in a multi-agent AI platform described as a series of design tenets"
 pubDate: 2026-09-02
 draft: false
 ---
